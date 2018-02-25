@@ -1,11 +1,83 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+  <img id="hack-illinois" align="center" src="/images/hackIllionis.png" alt="HackIllionis 2018" class="center">
+
+
+  <h1 align="center"><%= title %></h1>
+  <p align="center"> HackIllionis 2018 <%= title %></p>
+
+  <ul>
+    <li>
+      The problem that we were trying to solve is
+      understanding the Puppeteer output whether if it is broken
+      or just operates as a different API.
+    </li>
+    <li>
+      The reason why it is important to solve these issues is because headless
+      debugging is very difficult to hash out and we need to mimic real users. Therefore
+      it is very important to spend a significant amount of time figuring it out.
+    </li>
+    <li>
+      We created a library in order to map Puppeteer to Instanbul,
+      updated the Puppeteer documentation in order to reflect our
+      better approach to coverage, and last but not least, created
+    a splash page for our project.
+    </li>
+  </ul>
+
+  <img id="outs" src="/images/Output.png" class="center">
+
+  <div class="card-cont" >
+    <div class="card">
+      <img class="card-img-top" src="/images/istanbbul.png" alt="Card image cap">
+      <div class="card-body">
+
+        <h5 class="card-title">Card 1</h5>
+
+        <p class="card-text">Istanbul basically instruments JavaScript code with line counters
+          in order to track how well the unit tests exercise the codebase.
+          The well-known cmd client is nyc.
+        </p>
+        <a href="https://istanbul.js.org/" class="btn btn-primary">Istanbul</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img id="puppeteer-img" class="card-img-top" src="/images/pupeeter2.png" alt="Card image cap">
+      <div class="card-body">
+
+        <h5 class="card-title">Card 2</h5>
+
+        <p class="card-text">Recently announced by Google to assist with Chrome browser automation, Puppeteer
+          is a Node library which provides a high-level API in order to carry out its
+          task to control Chrome (and eventually the world, I'm kidding!)
+        </p>
+        <a href="https://github.com/GoogleChrome/puppeteer" class="btn btn-primary">Puppeteer</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img class="card-img-top" src="/images/chrome.png" alt="Card image cap">
+      <div class="card-body">
+
+        <h5 class="card-title">Card 3</h5>
+
+        <p class="card-text">Chromium is an open-source browser project that aims to build a
+          safer and efficient way for all users to experience
+        the web.</p>
+        <a href="https://www.chromium.org/Home" class="btn btn-primary">Chromium</a>
+      </div>
+    </div>
+  </div>
+</body>
 </html>
