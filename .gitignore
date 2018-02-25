@@ -1,6 +1,7 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 /public/content/*
+.nyc_output/
 
 # dependencies
 /node_modules
