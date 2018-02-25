@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+	<form method="POST" action="/coverage">
+		<textarea class="text" cols="86" rows ="20" name="jsFile"></textarea>
+		<input type="submit" value="Run Coverage">
+	</form>
+  </body>
+</html>

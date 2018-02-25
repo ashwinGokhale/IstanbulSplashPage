@@ -11,8 +11,11 @@
     "debug": "~2.6.9",
     "ejs": "~2.5.7",
     "express": "~4.15.5",
+    "mkdirp": "^0.5.1",
     "morgan": "~1.9.0",
-    "serve-favicon": "~2.4.5"
+    "nyc": "^11.4.1",
+    "serve-favicon": "~2.4.5",
+    "uuid": "^3.2.1"
   },
   "devDependencies": {
     "nodemon": "^1.15.1"
