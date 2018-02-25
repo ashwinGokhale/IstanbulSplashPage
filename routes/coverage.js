@@ -29,8 +29,10 @@ router.post('/', (req, res, next) => {
 		fs.writeFileSync(jsFileName, contents, 'utf8');
 		
 		// Take contents and spawn nyc command
+		const prevCWD = process.cwd();
 		process.chdir(path.resolve(process.cwd(), 'public/content', id));
 		const nycOutput = exec.spawnSync(process.execPath, [nycPath, '--reporter=html', 'node', jsFileName]);
+		process.chdir(prevCWD);
 
 		// Redirect to coverage output folder
 		res.redirect(`/content/${id}/coverage`)
