@@ -21,32 +21,19 @@ router.post('/', (req, res, next) => {
 	const id = uuid();
 	// Make temp directory
 	mkdirp(path.resolve(process.cwd(), 'public/content', id), (err, dir) => {
-		if (err != null) return res.status(400).send('Error making directory ' + err);
+		// If folder failed to get created send an error
+		if (err != null) return res.status(500).send('Error making directory ' + err);
 		
 		// Create uuid for each request and write javascript in textarea to disk
-		
-		const jsFileName = path.resolve(__dirname, '../public/content',id, id)+'.js';
+		const jsFileName = path.resolve(__dirname, '../public/content',id)+'/index.js';
 		fs.writeFileSync(jsFileName, contents, 'utf8');
 		
-		// TODO: REMOVE THIS AND REPLACE WITH BELOW.
-			// Read contents of file and send it as response
-			const file = fs.readFileSync(jsFileName, 'utf8');
-			res.send(file)
-		//
+		// Take contents and spawn nyc command
+		process.chdir(path.resolve(process.cwd(), 'public/content', id));
+		const nycOutput = exec.spawnSync(process.execPath, [nycPath, '--reporter=html', 'node', jsFileName]);
 
-		// TODO: 
-		// 1. Take contents and spawn nyc command
-
-		// process.chdir(path.resolve(process.cwd(), 'public/content', id))
-		// console.log(path.resolve(__dirname, '../node_modules/.bin/nyc'))
-		// console.log(process.cwd())
-		// const nycOutput = exec.spawnSync('nyc', ['--reporter=html', 'node', id+'.js']);
-		// console.log(nycOutput)
-
-		// console.log('NYC Path:', nycPath);
-		// 2. Rename output of nyc from coverage to ${id}
-		// 2. Move output of nyc to `public/coverages/${id}`
-		// 3. res.redirect(`/public/coverages/${id}`)
+		// Redirect to coverage output folder
+		res.redirect(`/content/${id}/coverage`)
 	});
 });
 
