@@ -6,3 +6,22 @@ body {
 a {
   color: #00B7FF;
 }
+
+.card { width: 18rem; }
+
+.card-cont {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10rem;
+}
+
+#puppeteer-img {
+  height: 18rem;
+  width: 15.10rem;
+  margin: auto;
+}
+
+ul {
+  list-style: square;
+
+}
