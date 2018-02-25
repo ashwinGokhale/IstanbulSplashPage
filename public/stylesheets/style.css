@@ -14,6 +14,22 @@ a {
   justify-content: space-between;
   margin-top: 10rem;
 }
+li {
+  margin: 10px 0;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+#outs {
+  margin: 70px 0;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 #puppeteer-img {
   height: 18rem;
